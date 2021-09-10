@@ -3,8 +3,11 @@ import illustrationImg from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
 import '../styles/auth.scss'
 import {Button} from '../components/Button'
+//import { useContext } from 'react';
+//import { AuthContext } from '../contexts/AuthContext';
 
 export function NewRoom() {
+/*   const { user } = useContext(AuthContext); */
  return (
   <div id="page-auth">
    <aside>
@@ -14,7 +17,7 @@ export function NewRoom() {
    </aside>
    <main>
     <div className="main-content">
-     <img src={logoImg} alt="Letmeask" />
+     <img src={logoImg} alt="Let me ask" />
      <h2>Create new room</h2>
      <form>
       <input
