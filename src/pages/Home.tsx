@@ -26,7 +26,7 @@ event.preventDefault();
 if (roomCode.trim() === '') {
   return;
 }
-const dbRef = ref(database, 'rooms');
+const dbRef = ref(database, `/rooms/${roomCode}`);
 const roomRef = await get(dbRef);
 if (!roomRef.exists()) {
 alert('Room does not exist!');
