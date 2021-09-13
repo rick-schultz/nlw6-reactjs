@@ -1,5 +1,5 @@
-import { ref, remove } from 'firebase/database'
-import { useParams } from 'react-router-dom'
+import { ref, remove, update } from 'firebase/database'
+import { useHistory, useParams } from 'react-router-dom'
 
 import LogoImg from '../..//assets/images/logo.svg'
 import deleteImg from '../../assets/images/delete.svg'
@@ -17,9 +17,17 @@ type RoomParams = {
 }
 
 export function AdminRoom() {
+  const history = useHistory();
   const params = useParams<RoomParams>();
   const roomId = params.id;
   const { title, questions} = useRoom(roomId); 
+
+  async function handleEndRoom() {
+    await update(ref(database, `rooms/${roomId}`), {
+      closedAt: new Date()
+    })
+    history.push('/')
+  }
 
 async function handleDeleteQuestion(questionId: string) {
   if (window.confirm('Are you sure you want to delete this question?')) {
@@ -34,7 +42,10 @@ async function handleDeleteQuestion(questionId: string) {
           <img src={LogoImg} alt="Let me ask" />
           <div>
           <RoomCode code={roomId}/>
-          <Button isOutlined>Close Room</Button>
+          <Button
+          isOutlined
+          onClick={handleEndRoom}
+          >Close Room</Button>
           </div>
         </div>
       </header>

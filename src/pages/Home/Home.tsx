@@ -32,6 +32,10 @@ if (!roomRef.exists()) {
 alert('Room does not exist!');
 return;
 }
+if (roomRef.val().closedAt){
+alert('Room already closed!');
+return;
+}
 history.push(`/rooms/${roomCode}`);
 }
 
