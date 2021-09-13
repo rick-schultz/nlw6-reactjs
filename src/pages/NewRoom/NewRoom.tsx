@@ -40,7 +40,9 @@ history.push(`/rooms/${firebaseRoom.key}`)
    </aside>
    <main>
     <div className="main-content">
+    <Link to="/">
      <img src={logoImg} alt="Let me ask" />
+    </Link>
      <h2>Create new room</h2>
      <form onSubmit={handleCreateRoom}>
       <input

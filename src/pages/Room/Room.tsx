@@ -1,7 +1,7 @@
 import { push, remove } from 'firebase/database'
 import { FormEvent, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import LogoImg from '../..//assets/images/logo.svg'
+import { Link, useParams } from 'react-router-dom'
+import logoImg from '../..//assets/images/logo.svg'
 import { Button } from '../../components/Button/Button'
 import { Question } from '../../components/Question/Question'
 import { RoomCode } from '../../components/RoomCode/RoomCode'
@@ -57,7 +57,9 @@ export function Room() {
     <div id="page-room">
       <header>
         <div className="content">
-          <img src={LogoImg} alt="Let me ask" />
+          <Link to="/">
+            <img src={logoImg} alt="Let me ask" />
+          </Link>
           <RoomCode code={roomId}/>
         </div>
       </header>

@@ -1,7 +1,7 @@
 import { ref, remove, update } from 'firebase/database'
-import { useHistory, useParams } from 'react-router-dom'
+import { Link, useHistory, useParams } from 'react-router-dom'
 
-import LogoImg from '../..//assets/images/logo.svg'
+import logoImg from '../..//assets/images/logo.svg'
 import deleteImg from '../../assets/images/delete.svg'
 
 import { Button } from '../../components/Button/Button'
@@ -39,7 +39,9 @@ async function handleDeleteQuestion(questionId: string) {
     <div id="page-room">
       <header>
         <div className="content">
-          <img src={LogoImg} alt="Let me ask" />
+        <Link to="/">
+           <img src={logoImg} alt="Let me ask" />
+        </Link>
           <div>
           <RoomCode code={roomId}/>
           <Button

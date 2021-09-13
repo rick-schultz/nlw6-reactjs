@@ -1,4 +1,4 @@
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import illustrationImg from '../../assets/images/illustration.svg';
 import logoImg from '../../assets/images/logo.svg';
 import googleIconImg from '../../assets/images/google-icon.svg';
@@ -48,7 +48,9 @@ history.push(`/rooms/${roomCode}`);
    </aside>
    <main>
     <div className="main-content">
-     <img src={logoImg} alt="Let me ask" />
+      <Link to="/">
+        <img src={logoImg} alt="Let me ask" />
+      </Link>
      <button onClick={handleCreateRoom} className="create-room">
       <img src={googleIconImg} alt="" />
       Create room with Google account
