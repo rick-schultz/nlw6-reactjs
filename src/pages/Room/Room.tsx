@@ -2,13 +2,13 @@ import { onValue, push } from 'firebase/database'
 import { FormEvent, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-import LogoImg from '../assets/images/logo.svg'
-import { Button } from '../components/Button'
-import { RoomCode } from '../components/RoomCode'
-import { useAuth } from '../hooks/useAuth'
-import { database, ref } from '../services/firebase'
+import LogoImg from '../..//assets/images/logo.svg'
+import { Button } from '../../components/Button/Button'
+import { RoomCode } from '../../components/RoomCode/RoomCode'
+import { useAuth } from '../../hooks/useAuth'
+import { database, ref } from '../../services/firebase'
 
-import '../styles/room.scss'
+import './room.styled.scss'
 
 type FirebaseQuestions = Record<string, {
   author: {
@@ -115,6 +115,7 @@ export function Room() {
               <Button type="submit" disabled={!user}>Send Question</Button>
             </div>
           </form>
+          {JSON.stringify(questions)}
         </main>
     </div>
   )

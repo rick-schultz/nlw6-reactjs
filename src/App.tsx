@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { Home } from "./pages/Home";
-import { NewRoom } from "./pages/NewRoom";
-import { Room } from "./pages/Room";
+import { Home } from "./pages/Home/Home";
+import { NewRoom } from "./pages/NewRoom/NewRoom";
+import { Room } from "./pages/Room/Room";
 import { AuthContextProvider } from './contexts/AuthContext'
 
 export default function App() {
