@@ -2,7 +2,7 @@ import { useHistory } from 'react-router-dom';
 import illustrationImg from '../../assets/images/illustration.svg';
 import logoImg from '../../assets/images/logo.svg';
 import googleIconImg from '../../assets/images/google-icon.svg';
-import '../../styles/auth.scss'
+import './home.styled.scss'
 import {Button} from '../../components/Button/Button'
 import { useAuth } from '../../hooks/useAuth';
 import { FormEvent } from 'react';
